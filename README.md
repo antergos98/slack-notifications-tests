@@ -10,8 +10,8 @@ When sending a POST request to /api/notification the code will check if "Type" f
 ```bash
 composer install
 php artisan key:generate
-# In a real word project sharing this key in the repository would be a bad idea
-php artisan env:decrypt --key=base64:5drPJXH+EY1UuD+aEseKmrrmFV7VqwRIYZymkYlEZ9s=
+cp .env.example .env # You will have to put a Slack Webhook URL in SLACK_ALERT_WEBHOOK
+
 php artisan serve
 ```
 
