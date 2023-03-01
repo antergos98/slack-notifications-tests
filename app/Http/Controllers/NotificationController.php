@@ -11,13 +11,14 @@ class NotificationController
     public function __invoke(NotificationRequest $request)
     {
         switch($request->enum('Type', NotificationType::class)) {
-            case NotificationType::HardBounce:
-                // Handle hard bounce...
-                break;
             case NotificationType::SpamNotification:
                 SlackAlert::message(
-                    sprintf('Spam triggered by %s', $request->string('Email'))
+                    sprintf('Email in payload: %s', $request->string('Email'))
                 );
+                break;
+            default: 
+                // Handle default ...
+                break;
         }
 
         return response('ok');
