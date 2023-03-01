@@ -16,7 +16,7 @@ class NotificationController
                     sprintf('Email in payload: %s', $request->string('Email'))
                 );
                 break;
-            default: 
+            default:
                 // Handle default ...
                 break;
         }
